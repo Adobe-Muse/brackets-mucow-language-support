@@ -1,10 +1,10 @@
 {
-    "name": "jeffbooher.mucowlanguage",
+    "name": "adobe.muse.mucowlanguage",
     "title": "MuCow Language Support",
-    "description": "Adds support for MUSE widget markup (MuCow)",
-    "homepage": "https://github.com/JeffryBooher/brackets-mucow-language-support",
-    "version": "0.4.0",
-    "author": "JeffryBooher (@JeffryBooher)",
+    "description": "Support for MUSE widget markup (MuCow)",
+    "homepage": "https://github.com/Adobe-Muse/brackets-mucow-language-support",
+    "version": "0.4.2",
+    "author": "Adobe",
     "license": "MIT",
     "engines": {
         "brackets": ">=0.24.0"
