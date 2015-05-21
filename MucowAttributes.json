@@ -1,0 +1,98 @@
+{
+    "accesskey": {
+        "attribOption": [
+            "1", 
+            "2", 
+            "3"
+        ]
+    },
+    "localization": {
+        "attribOption": [
+            "none", 
+            "stringTable"
+        ]
+    },
+    "isResizable": {
+        "attribOption": [],
+        "type": "boolean"
+    },
+    "paramEncoding": {
+        "attribOption": [
+            "URIComponent", 
+            "spaceToPlus"
+        ]
+    },
+    "multiline": {
+        "attribOption": [],
+        "type": "boolean"
+    },
+    "defaultIllegalForOutput": {
+        "attribOption": [],
+        "type": "boolean"
+    },
+    "currentPageOrURL": {
+        "attribOption": [],
+        "type": "boolean"
+    },
+    "builtIn/name": {
+        "attribOption": [
+            "width", 
+            "height", 
+            "itemUID", 
+            "siteUID", 
+            "country", 
+            "language", 
+            "locale"
+        ]
+    },
+    "fileRequiredForOutput": {
+        "attribOption": [],
+        "type": "boolean"
+    },
+    "rgbColor": {
+        "attribOption": [],
+        "type": "boolean"
+    },
+    "formatHexColor": {
+        "attribOption": [],
+        "type": "boolean"
+    },
+    "supportsNoneColor": {
+        "attribOption": [],
+        "type": "boolean"
+    },
+    "locale/name": {
+        "attribOption": [
+            "en_US",
+            "en_GB",
+            "es_ES",
+            "nl_NL",
+            "fr_FR",
+            "de_DE",
+            "sv_SE",
+            "ja_JP",
+            "it_IT",
+            "da_DK",
+            "nb_NO",
+            "zh_TW",
+            "ko_KR",
+            "tr_TR",
+            "pt_BR",
+            "fi_FI",
+            "cs_CZ",
+            "pl_PL",
+            "ru_RU"
+        ],
+        "type": "string",
+        "noSort": "true"
+    },
+    "HTMLWidget/localization": {
+        "attribOption": [
+            "none",
+            "stringTable"
+        ],
+        "type": "string",
+        "noSort": "true"
+    }
+
+}

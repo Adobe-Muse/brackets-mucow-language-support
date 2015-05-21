@@ -1,0 +1,11 @@
+{
+    "language": {
+        "javascript": {
+            "linting.prefer": ["ESLint"],
+            "linting.usePreferredOnly": true
+        }
+    },
+    "eslint.options:Preview": {
+        "configFile": ".eslintrc"
+    }
+}

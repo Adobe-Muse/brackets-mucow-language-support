@@ -1,0 +1,203 @@
+{
+    "bodyBeginHTML": {
+        "attributes": [],
+        "context": [
+            "HTMLWidget", 
+            "value", 
+            "trueVal",
+            "falseVal"
+        ]
+    },
+    "bodyEndHTML": {
+        "attributes": [],
+        "context": [
+            "HTMLWidget", 
+            "value", 
+            "trueVal",
+            "falseVal"
+        ]
+    },
+    "bool": {
+        "attributes": [
+            "defaultValue", 
+            "label", 
+            "name", 
+            "toolTip"
+        ],
+        "context": ["parameters"]
+    },
+    "builtIn": {
+        "attributes": [
+            "name", 
+            "supportedLocales"
+        ],
+        "context": ["parameters"]    
+    },
+    "color": {
+        "attributes": [
+            "formatHexColor", 
+            "label", 
+            "defaultValue", 
+            "name", 
+            "rgbColor", 
+            "supportsNoneColor",
+            "toolTip"
+        ],
+        "context": ["parameters"]    
+    },
+    "falseVal": {
+        "attributes": [
+            "disableOptions", 
+            "value"
+        ],
+        "context": ["bool"]
+    },
+    "file": {
+        "attributes": [
+            "filterLabel", 
+            "fileTypes", 
+            "fileRequiredForOutput", 
+            "label", 
+            "name",
+            "toolTip"
+        ],
+        "context": ["parameters"]    
+    },
+    "headHTML": {
+        "attributes": [],
+        "context": [
+            "HTMLWidget", 
+            "value", 
+            "trueVal",
+            "falseVal"
+        ]
+    },
+    "HTMLWidget": {
+        "attributes": [
+            "creator", 
+            "defaultHeight", 
+            "defaultWidth", 
+            "formatNumber", 
+            "isResizable", 
+            "localization", 
+            "maxWidth", 
+            "maxHeight", 
+            "minHeight", 
+            "minWidth", 
+            "name", 
+            "termsURL", 
+            "termsText"
+        ],
+        "context": ["/root$"]
+    },
+    "info": {
+        "attributes": [
+            "linkURL", 
+            "value"
+        ],
+        "context": ["parameters"]    
+    },
+    "list": {
+        "attributes": [
+            "defaultValue", 
+            "label", 
+            "name", 
+            "toolTip"
+        ],
+        "context": ["parameters"]    
+    },
+    "locale": {
+        "attributes": ["name"],
+        "context": ["stringTable"]
+    },
+    "number": {
+        "attributes": [
+            "defaultValue", 
+            "digitsPrecision", 
+            "label", 
+            "max", 
+            "min", 
+            "name", 
+            "snap", 
+            "toolTip", 
+            "step"
+        ],
+        "context": ["parameters"]    
+    },
+    "pageItemHTML": {
+        "attributes": [],
+        "context": [
+            "HTMLWidget", 
+            "value", 
+            "trueVal",
+            "falseVal"
+        ]
+    },
+    "pageItemPosterHTML": {
+        "attributes": [],
+        "context": [
+            "HTMLWidget", 
+            "value", 
+            "trueVal",
+            "falseVal"
+        ]
+    },
+    "parameters": {
+        "attributes": [],
+        "context": ["HTMLWidget"]
+    },
+    "separator": {
+        "attributes": [],
+        "context": ["parameters"]    
+    },
+    "string": {
+        "attributes": [
+            "keyString", 
+            "translation"
+        ],
+        "context": ["locale"]    
+    },
+    "stringTable": {
+        "attributes": [],
+        "context": ["HTMLWidget"]
+    },
+    "text": {
+        "attributes": [
+            "defaultIllegalForOutput", 
+            "defaultValue", 
+            "label", 
+            "toolTip", 
+            "multiline", 
+            "name", 
+            "paramEncoding"
+        ],
+        "context": ["parameters"]    
+    },
+    "trueVal": {
+        "attributes": [
+            "disableOptions", 
+            "value"
+        ],
+        "context": ["bool"]
+    },
+    "url": {
+        "attributes": [
+            "currentPageOrURL", 
+            "defaultIllegalForOutput", 
+            "defaultValue", 
+            "dummyDomainPrefix", 
+            "label", 
+            "name", 
+            "toolTip", 
+            "urlStart"
+        ],
+        "context": ["parameters"]    
+    },
+    "value": {
+        "attributes": [
+            "label", 
+            "name"
+        ],
+        "context": ["list"]
+    }
+}
