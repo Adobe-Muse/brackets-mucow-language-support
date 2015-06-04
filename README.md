@@ -9,7 +9,7 @@ This is an Open Source project and is MIT licensed so feel free to fork the repo
 Please file any issues in this repository.  
 
 NOTICE  
-licensed under CC BY 3.0 licence.
+XMLINT.js is licensed under CC BY 3.0 licence.
 https://creativecommons.org/licenses/by/3.0/
 
 ATTRIBUTION
