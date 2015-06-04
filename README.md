@@ -17,5 +17,4 @@ ATTRIBUTION
 xmllint.js Built by @syssgx and based on xml.js by @kripken
 ```
 
-For more infomation see the About page at.
-http://syssgx.github.io/xml.js/
+For more infomation see the About page at: http://syssgx.github.io/xml.js/
