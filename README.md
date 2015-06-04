@@ -8,7 +8,8 @@ This is an Open Source project and is MIT licensed so feel free to fork the repo
 
 Please file any issues in this repository.  
 
+```
 xmllint.js
-
 Built by @syssgx and based on xml.js by @kripken.
 Code licensed under CC BY 3.0 licence.
+```
