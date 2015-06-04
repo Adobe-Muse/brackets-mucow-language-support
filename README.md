@@ -9,7 +9,7 @@ This is an Open Source project and is MIT licensed so feel free to fork the repo
 Please file any issues in this repository.  
 
 NOTICE  
-XMLINT.js is licensed under CC BY 3.0 licence.
+xmllint.js is licensed under the Creative Commons "CC BY 3.0 licence".
 https://creativecommons.org/licenses/by/3.0/
 
 ATTRIBUTION
@@ -17,5 +17,5 @@ ATTRIBUTION
 xmllint.js Built by @syssgx and based on xml.js by @kripken
 ```
 
-For more infomation see the About page at 
+For more infomation see the About page at.
 http://syssgx.github.io/xml.js/
