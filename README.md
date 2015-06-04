@@ -13,3 +13,4 @@ xmllint.js
 Built by @syssgx and based on xml.js by @kripken.
 Code licensed under CC BY 3.0 licence.
 ```
+http://syssgx.github.io/xml.js/#about
