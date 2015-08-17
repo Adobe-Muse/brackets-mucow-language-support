@@ -3,7 +3,8 @@
         "attribOption": [
             "1", 
             "2", 
-            "3"
+            "3",
+            "4"
         ]
     },
     "localization": {
@@ -42,7 +43,11 @@
             "siteUID", 
             "country", 
             "language", 
-            "locale"
+            "locale",
+            "siteDomain",
+            "siteURL",
+            "pageTitle",
+            "pageURL" 
         ]
     },
     "fileRequiredForOutput": {
@@ -93,6 +98,17 @@
         ],
         "type": "string",
         "noSort": "true"
+    },
+    "supportsGlobalAndOptionContentTags": {
+        "attribOption": [],
+        "type": "boolean"
+    },
+    "asAbsoluteURL": {
+        "attribOption": [],
+        "type": "boolean"
+    },
+    "expanded": {
+        "attribOption": [],
+        "type": "boolean"
     }
-
 }
