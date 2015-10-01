@@ -92,8 +92,8 @@
     },
     "info": {
         "attributes": [
-            "linkURL", 
-            "value"
+            "label", 
+            "linkURL" 
         ],
         "context": ["parameters"]    
     },
