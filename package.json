@@ -3,7 +3,7 @@
     "title": "MuCow Language Support",
     "description": "Support for MUSE widget markup (MuCow)",
     "homepage": "https://github.com/Adobe-Muse/brackets-mucow-language-support",
-    "version": "0.4.3",
+    "version": "0.4.71",
     "author": "Adobe",
     "license": "MIT",
     "engines": {
