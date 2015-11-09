@@ -1,220 +1,234 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:group name="contents">
+    <xs:choice>
+      <xs:element name="headHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="documentReadyJS" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="bodyBeginHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pageItemHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="bodyEndHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pageItemPosterHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:choice>
+  </xs:group>
+  <xs:group name="parameters">
+    <xs:choice>
+      <xs:element name="text">
+        <xs:complexType>
+          <xs:attribute name="name" type="xs:string" use="required"/>
+          <xs:attribute name="defaultValue" type="xs:string" use="required" />
+          <xs:attribute name="label" type="xs:string" use="optional" />
+          <xs:attribute name="toolTip" type="xs:string" use="optional" />
+          <xs:attribute name="paramEncoding" use="optional">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="URIComponent"/>
+                <xs:enumeration value="spaceToPlus"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="multiline" type="xs:boolean" use="optional" />
+          <xs:attribute name="defaultIllegalForOutput" type="xs:boolean" use="optional" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="list">
+        <xs:complexType mixed="true">
+          <xs:sequence>
+            <xs:element name="value" minOccurs="2" maxOccurs="unbounded">
+              <xs:complexType mixed="true">
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                  <xs:group ref="contents" />
+                </xs:choice>
+                <xs:attribute name="name" type="xs:string" use="required" />
+                <xs:attribute name="label" type="xs:string" use="optional" />
+                <xs:attribute name="disableOptions" type="xs:string" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="name" type="xs:string" use="required"/>
+          <xs:attribute name="defaultValue" type="xs:string" use="required" />
+          <xs:attribute name="label" type="xs:string" use="optional" />
+          <xs:attribute name="toolTip" type="xs:string" use="optional" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="url">
+        <xs:complexType>
+          <xs:attribute name="name" type="xs:string" use="required"/>
+          <xs:attribute name="defaultValue" type="xs:anyURI" use="required" />
+          <xs:attribute name="label" type="xs:string" use="optional" />
+          <xs:attribute name="toolTip" type="xs:string" use="optional" />
+          <xs:attribute name="urlStart" type="xs:anyURI" use="optional" />
+          <xs:attribute name="currentPageOrURL" type="xs:boolean" use="optional" />
+          <xs:attribute name="dummyDomainPrefix" type="xs:anyURI" use="optional" />
+          <xs:attribute name="defaultIllegalForOutput" type="xs:boolean" use="optional" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="bool">
+        <xs:complexType mixed="true">
+          <xs:all>
+            <xs:element name="trueVal" minOccurs="1">
+              <xs:complexType>
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                  <xs:group ref="contents" />
+                </xs:choice>
+                <xs:attribute name="value" type="xs:string" use="required" />
+                <xs:attribute name="disableOptions" type="xs:string" use="optional" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="falseVal" minOccurs="1">
+              <xs:complexType>
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                  <xs:group ref="contents" />
+                </xs:choice>
+                <xs:attribute name="value" type="xs:string" use="required" />
+                <xs:attribute name="disableOptions" type="xs:string" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:all>
+          <xs:attribute name="name" type="xs:string" use="required"/>
+          <xs:attribute name="defaultValue" type="xs:string" use="required" />
+          <xs:attribute name="label" type="xs:string" use="optional" />
+          <xs:attribute name="toolTip" type="xs:string" use="optional" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="number">
+        <xs:complexType>
+          <xs:attribute name="name" type="xs:string" use="required"/>
+          <xs:attribute name="defaultValue" type="xs:string" use="required" />
+          <xs:attribute name="min" type="xs:decimal" use="required" />
+          <xs:attribute name="max" type="xs:decimal" use="required" />
+          <xs:attribute name="label" type="xs:string" use="optional" />
+          <xs:attribute name="toolTip" type="xs:string" use="optional" />
+          <xs:attribute name="step" type="xs:decimal" use="optional" default="1"/>
+          <xs:attribute name="snap" type="xs:decimal" use="optional" default="1"/>
+          <xs:attribute name="digitsPrecision" type="xs:int" use="optional" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="builtIn">
+        <xs:complexType mixed="true">
+          <xs:attribute name="name" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="width" />
+                <xs:enumeration value="height" />
+                <xs:enumeration value="itemUID" />
+                <xs:enumeration value="siteUID" />
+                <xs:enumeration value="country" />
+                <xs:enumeration value="language" />
+                <xs:enumeration value="locale" />
+                <xs:enumeration value="siteDomain" />
+                <xs:enumeration value="siteURL" />
+                <xs:enumeration value="pageTitle" />
+                <xs:enumeration value="pageURL" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="supportedLocales" type="xs:string" use="optional"/>
+          <xs:attribute name="supportedLanguages" type="xs:string" use="optional"/>
+          <xs:attribute name="variant" type="xs:string" use="optional"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="info">
+        <xs:complexType mixed="true">
+          <xs:attribute name="label" type="xs:string" use="required" />
+          <xs:attribute name="linkURL" type="xs:anyURI" use="optional" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="separator">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="color">
+        <xs:complexType mixed="true">
+          <xs:attribute name="name" type="xs:string" use="required" />
+          <xs:attribute name="label" type="xs:string" use="optional" />
+          <xs:attribute name="defaultValue" type="xs:string" use="optional" />
+          <xs:attribute name="rgbColor" type="xs:boolean" use="optional" />
+          <xs:attribute name="formatHexColor" type="xs:boolean" use="optional" />
+          <xs:attribute name="supportsNoneColor" type="xs:boolean" use="optional" />
+          <xs:attribute name="transparentOption" type="xs:string" use="optional" />
+          <xs:attribute name="toolTip" type="xs:string" use="optional" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="file">
+        <xs:complexType mixed="true">
+          <xs:attribute name="name" type="xs:string" use="required" />
+          <xs:attribute name="label" type="xs:string" use="optional" />
+          <xs:attribute name="filterLabel" type="xs:string" use="optional" />
+          <xs:attribute name="fileTypes" type="xs:string" use="optional" />
+          <xs:attribute name="fileRequiredForOutput" type="xs:boolean" use="optional" />
+          <xs:attribute name="toolTip" type="xs:string" use="optional" />
+          <xs:attribute name="asAbsoluteURL" type="xs:boolean" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+  </xs:group>
   <xs:element name="HTMLWidget">
     <xs:complexType mixed="true">
       <xs:choice maxOccurs="unbounded">
         <xs:element name="parameters" maxOccurs="1">
           <xs:complexType>
           <xs:choice maxOccurs="unbounded">
-            <xs:element name="text">
-              <xs:complexType>
-                <xs:attribute name="name" type="xs:string" use="required"/>
-                <xs:attribute name="defaultValue" type="xs:string" use="required" />
-                <xs:attribute name="label" type="xs:string" use="optional" />
-                <xs:attribute name="toolTip" type="xs:string" use="optional" />
-                <xs:attribute name="paramEncoding" use="optional">
-                  <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                      <xs:enumeration value="URIComponent"/>
-                      <xs:enumeration value="spaceToPlus"/>
-                    </xs:restriction>
-                  </xs:simpleType>
-                </xs:attribute>
-                <xs:attribute name="multiline" type="xs:boolean" use="optional" />
-                <xs:attribute name="defaultIllegalForOutput" type="xs:boolean" use="optional" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="list">
+            <xs:group ref="parameters" />
+            <xs:element name="section">
               <xs:complexType mixed="true">
-                <xs:sequence>
-                  <xs:element name="value" minOccurs="2" maxOccurs="unbounded">
-                    <xs:complexType mixed="true">
-                      <xs:all>
-                        <xs:element name="headHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
-                        <xs:element name="bodyBeginHTML" type="xs:string" minOccurs="0" maxOccurs="1"/>
-                        <xs:element name="pageItemHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
-                        <xs:element name="bodyEndHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
-                        <xs:element name="pageItemPosterHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
-                      </xs:all>
-                      <xs:attribute name="name" type="xs:string" use="required" />
-                      <xs:attribute name="label" type="xs:string" use="optional" />
-                      <xs:attribute name="disableOptions" type="xs:string" use="optional" />
-                    </xs:complexType>
-                  </xs:element>
-                </xs:sequence>
-                <xs:attribute name="name" type="xs:string" use="required"/>
-                <xs:attribute name="defaultValue" type="xs:string" use="required" />
-                <xs:attribute name="label" type="xs:string" use="optional" />
-                <xs:attribute name="toolTip" type="xs:string" use="optional" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="url">
-              <xs:complexType>
-                <xs:attribute name="name" type="xs:string" use="required"/>
-                <xs:attribute name="defaultValue" type="xs:anyURI" use="required" />
-                <xs:attribute name="label" type="xs:string" use="optional" />
-                <xs:attribute name="toolTip" type="xs:string" use="optional" />
-                <xs:attribute name="urlStart" type="xs:anyURI" use="optional" />
-                <xs:attribute name="currentPageOrURL" type="xs:boolean" use="optional" />
-                <xs:attribute name="dummyDomainPrefix" type="xs:anyURI" use="optional" />
-                <xs:attribute name="defaultIllegalForOutput" type="xs:boolean" use="optional" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="bool">
-              <xs:complexType mixed="true">
-                <xs:all>
-                  <xs:element name="trueVal" minOccurs="1">
-                    <xs:complexType>
-                      <xs:all>
-                        <xs:element name="headHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
-                        <xs:element name="bodyBeginHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
-                        <xs:element name="pageItemHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
-                        <xs:element name="bodyEndHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
-                        <xs:element name="pageItemPosterHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
-                      </xs:all>
-                      <xs:attribute name="value" type="xs:string" use="required" />
-                      <xs:attribute name="disableOptions" type="xs:string" use="optional" />
-                    </xs:complexType>
-                  </xs:element>
-                  <xs:element name="falseVal" minOccurs="1">
-                    <xs:complexType>
-                      <xs:all>
-                        <xs:element name="headHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
-                        <xs:element name="bodyBeginHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
-                        <xs:element name="pageItemHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
-                        <xs:element name="bodyEndHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
-                        <xs:element name="pageItemPosterHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
-                      </xs:all>
-                      <xs:attribute name="value" type="xs:string" use="required" />
-                      <xs:attribute name="disableOptions" type="xs:string" use="optional" />
-                    </xs:complexType>
-                  </xs:element>
-                </xs:all>
-                <xs:attribute name="name" type="xs:string" use="required"/>
-                <xs:attribute name="defaultValue" type="xs:string" use="required" />
-                <xs:attribute name="label" type="xs:string" use="optional" />
-                <xs:attribute name="toolTip" type="xs:string" use="optional" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="number">
-              <xs:complexType>
-                <xs:attribute name="name" type="xs:string" use="required"/>
-                <xs:attribute name="defaultValue" type="xs:string" use="required" />
-                <xs:attribute name="min" type="xs:decimal" use="required" />
-                <xs:attribute name="max" type="xs:decimal" use="required" />
-                <xs:attribute name="label" type="xs:string" use="optional" />
-                <xs:attribute name="toolTip" type="xs:string" use="optional" />
-                <xs:attribute name="step" type="xs:decimal" use="optional" default="1"/>
-                <xs:attribute name="snap" type="xs:decimal" use="optional" default="1"/>
-                <xs:attribute name="digitsPrecision" type="xs:int" use="optional" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="builtIn">
-              <xs:complexType mixed="true">
-                <xs:attribute name="name" use="required">
-                  <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                      <xs:enumeration value="width" />
-                      <xs:enumeration value="height" />
-                      <xs:enumeration value="itemUID" />
-                      <xs:enumeration value="siteUID" />
-                      <xs:enumeration value="country" />
-                      <xs:enumeration value="language" />
-                      <xs:enumeration value="locale" />
-                    </xs:restriction>
-                  </xs:simpleType>
-                </xs:attribute>
-                <xs:attribute name="supportedLocales" type="xs:string" use="optional"/>
-                <xs:attribute name="supportedLanguages" type="xs:string" use="optional"/>
-                <xs:attribute name="variant" type="xs:string" use="optional"/>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="info">
-              <xs:complexType mixed="true">
+                <xs:choice maxOccurs="unbounded">
+                  <xs:group ref="parameters" />
+                </xs:choice>
                 <xs:attribute name="label" type="xs:string" use="required" />
-                <xs:attribute name="linkURL" type="xs:anyURI" use="optional" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="separator">
-              <xs:simpleType>
-                <xs:restriction base="xs:string">
-                  <xs:maxLength value="0"/>
-                </xs:restriction>
-              </xs:simpleType>
-            </xs:element>
-            <xs:element name="color">
-              <xs:complexType mixed="true">
-                <xs:attribute name="name" type="xs:string" use="required" />
-                <xs:attribute name="label" type="xs:string" use="optional" />
-                <xs:attribute name="defaultValue" type="xs:string" use="optional" />
-                <xs:attribute name="rgbColor" type="xs:boolean" use="optional" />
-                <xs:attribute name="formatHexColor" type="xs:boolean" use="optional" />
-                <xs:attribute name="supportsNoneColor" type="xs:boolean" use="optional" />
-                <xs:attribute name="transparentOption" type="xs:string" use="optional" />
-                <xs:attribute name="toolTip" type="xs:string" use="optional" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="file">
-              <xs:complexType mixed="true">
-                <xs:attribute name="name" type="xs:string" use="required" />
-                <xs:attribute name="label" type="xs:string" use="optional" />
-                <xs:attribute name="filterLabel" type="xs:string" use="optional" />
-                <xs:attribute name="fileTypes" type="xs:string" use="optional" />
-                <xs:attribute name="fileRequiredForOutput" type="xs:boolean" use="optional" />
-                <xs:attribute name="toolTip" type="xs:string" use="optional" />
+                <xs:attribute name="name" type="xs:string" use="optional"/>
+                <xs:attribute name="expanded" type="xs:boolean" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:choice>
           </xs:complexType>  
-      </xs:element>
-        <xs:element name="stringTable" maxOccurs="1">
-              <xs:complexType>
-                <xs:choice maxOccurs="unbounded">
-                  <xs:element name="locale" minOccurs="1" >
-                    <xs:complexType mixed="true">
-                      <xs:sequence>
-                        <xs:element name="string" minOccurs="1" maxOccurs="unbounded">
-                          <xs:complexType>
-                            <xs:attribute name="keyString" type="xs:string" use="required"/>
-                            <xs:attribute name="translation" type="xs:string" use="required" />
-                          </xs:complexType>
-                        </xs:element>
-                      </xs:sequence>
-                      <xs:attribute name="name" use="required">
-                        <xs:simpleType>
-                          <xs:restriction base="xs:string">
-                            <xs:enumeration value="en_US"/>
-                            <xs:enumeration value="en_GB"/>
-                            <xs:enumeration value="es_ES"/>
-                            <xs:enumeration value="nl_NL"/>
-                            <xs:enumeration value="fr_FR"/>
-                            <xs:enumeration value="de_DE"/>
-                            <xs:enumeration value="sv_SE"/>
-                            <xs:enumeration value="ja_JP"/>
-                            <xs:enumeration value="it_IT"/>
-                            <xs:enumeration value="da_DK"/>
-                            <xs:enumeration value="nb_NO"/>
-                            <xs:enumeration value="zh_TW"/>
-                            <xs:enumeration value="ko_KR"/>
-                            <xs:enumeration value="tr_TR"/>
-                            <xs:enumeration value="pt_BR"/>
-                            <xs:enumeration value="fi_FI"/>
-                            <xs:enumeration value="cs_CZ"/>
-                            <xs:enumeration value="pl_PL"/>
-                            <xs:enumeration value="ru_RU"/>
-                          </xs:restriction>
-                        </xs:simpleType>
-                      </xs:attribute>
-                    </xs:complexType>
-                  </xs:element>
-                </xs:choice>
-              </xs:complexType>
         </xs:element>
-        <xs:element name="headHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
-        <xs:element name="bodyBeginHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
-        <xs:element name="pageItemHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
-        <xs:element name="bodyEndHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
-        <xs:element name="pageItemPosterHTML" type="xs:string" minOccurs="0" maxOccurs="1" />      
+        <xs:element name="stringTable" maxOccurs="1">
+          <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+              <xs:element name="locale" minOccurs="1" >
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:element name="string" minOccurs="1" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="keyString" type="xs:string" use="required"/>
+                        <xs:attribute name="translation" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="name" use="required">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="en_US"/>
+                        <xs:enumeration value="en_GB"/>
+                        <xs:enumeration value="es_ES"/>
+                        <xs:enumeration value="nl_NL"/>
+                        <xs:enumeration value="fr_FR"/>
+                        <xs:enumeration value="de_DE"/>
+                        <xs:enumeration value="sv_SE"/>
+                        <xs:enumeration value="ja_JP"/>
+                        <xs:enumeration value="it_IT"/>
+                        <xs:enumeration value="da_DK"/>
+                        <xs:enumeration value="nb_NO"/>
+                        <xs:enumeration value="zh_TW"/>
+                        <xs:enumeration value="ko_KR"/>
+                        <xs:enumeration value="tr_TR"/>
+                        <xs:enumeration value="pt_BR"/>
+                        <xs:enumeration value="fi_FI"/>
+                        <xs:enumeration value="cs_CZ"/>
+                        <xs:enumeration value="pl_PL"/>
+                        <xs:enumeration value="ru_RU"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:choice>
+          </xs:complexType>
+        </xs:element>
+        <xs:group ref="contents" />
       </xs:choice>
       <xs:attribute name="name" type="xs:string" use="required"/>
       <xs:attribute name="formatNumber" use="required" >
@@ -223,6 +237,7 @@
             <xs:enumeration value="1"/>
             <xs:enumeration value="2"/>
             <xs:enumeration value="3"/>
+            <xs:enumeration value="4"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute>
@@ -245,7 +260,9 @@
       <xs:attribute name="maxWidth" type="xs:int" use="optional" />
       <xs:attribute name="maxHeight" type="xs:int" use="optional" />
       <xs:attribute name="isResizable" type="xs:boolean" use="optional" />
+      <xs:attribute name="isResponsive" type="xs:boolean" use="optional" />
       <xs:attribute name="onlineHelpID" type="xs:string" use="optional" />
+      <xs:attribute name="supportsGlobalAndOptionContentTags" type="xs:boolean" use="optional" />
     </xs:complexType>
   </xs:element>
 </xs:schema>

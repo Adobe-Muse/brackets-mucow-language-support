@@ -24,14 +24,14 @@
             "name", 
             "toolTip"
         ],
-        "context": ["parameters"]
+        "context": ["parameters", "section"]
     },
     "builtIn": {
         "attributes": [
             "name", 
             "supportedLocales"
         ],
-        "context": ["parameters"]    
+        "context": ["parameters", "section"]    
     },
     "color": {
         "attributes": [
@@ -43,8 +43,17 @@
             "supportsNoneColor",
             "toolTip"
         ],
-        "context": ["parameters"]    
+        "context": ["parameters", "section"]    
     },
+    "documentReadyJS": {
+        "attributes": [],
+        "context": [
+            "HTMLWidget", 
+            "value", 
+            "trueVal",
+            "falseVal"
+        ]
+    },    
     "falseVal": {
         "attributes": [
             "disableOptions", 
@@ -59,9 +68,10 @@
             "fileRequiredForOutput", 
             "label", 
             "name",
-            "toolTip"
+            "toolTip",
+            "asAbsoluteURL"
         ],
-        "context": ["parameters"]    
+        "context": ["parameters", "section"]    
     },
     "headHTML": {
         "attributes": [],
@@ -86,16 +96,18 @@
             "minWidth", 
             "name", 
             "termsURL", 
-            "termsText"
+            "termsText",
+            "supportsGlobalAndOptionContentTags",
+            "isResponsive"
         ],
         "context": ["/root$"]
     },
     "info": {
         "attributes": [
-            "label", 
+            "label",
             "linkURL" 
         ],
-        "context": ["parameters"]    
+        "context": ["parameters", "section"]    
     },
     "list": {
         "attributes": [
@@ -104,7 +116,7 @@
             "name", 
             "toolTip"
         ],
-        "context": ["parameters"]    
+        "context": ["parameters", "section"]    
     },
     "locale": {
         "attributes": ["name"],
@@ -122,7 +134,7 @@
             "toolTip", 
             "step"
         ],
-        "context": ["parameters"]    
+        "context": ["parameters", "section"]    
     },
     "pageItemHTML": {
         "attributes": [],
@@ -146,9 +158,17 @@
         "attributes": [],
         "context": ["HTMLWidget"]
     },
+    "section": {
+        "attributes": [
+            "expanded",
+            "label",
+            "name"
+        ],
+        "context": ["parameters"]
+    },
     "separator": {
         "attributes": [],
-        "context": ["parameters"]    
+        "context": ["parameters", "section"]    
     },
     "string": {
         "attributes": [
@@ -171,7 +191,7 @@
             "name", 
             "paramEncoding"
         ],
-        "context": ["parameters"]    
+        "context": ["parameters", "section"]    
     },
     "trueVal": {
         "attributes": [
@@ -191,7 +211,7 @@
             "toolTip", 
             "urlStart"
         ],
-        "context": ["parameters"]    
+        "context": ["parameters", "section"]    
     },
     "value": {
         "attributes": [
