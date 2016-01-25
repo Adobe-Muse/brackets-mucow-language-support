@@ -148,10 +148,7 @@
     "pageItemPosterHTML": {
         "attributes": [],
         "context": [
-            "HTMLWidget", 
-            "value", 
-            "trueVal",
-            "falseVal"
+            "HTMLWidget"
         ]
     },
     "parameters": {
@@ -215,6 +212,7 @@
     },
     "value": {
         "attributes": [
+            "disableOptions", 
             "label", 
             "name"
         ],
