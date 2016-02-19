@@ -41,7 +41,8 @@
             "name", 
             "rgbColor", 
             "supportsNoneColor",
-            "toolTip"
+            "toolTip",
+            "transparentOption"
         ],
         "context": ["parameters", "section"]    
     },
