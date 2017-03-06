@@ -99,7 +99,9 @@
             "termsURL", 
             "termsText",
             "supportsGlobalAndOptionContentTags",
-            "isResponsive"
+            "isResponsive",
+            "supportedSizePolicies",
+            "outputAsFixedHeight"
         ],
         "context": ["/root$"]
     },
