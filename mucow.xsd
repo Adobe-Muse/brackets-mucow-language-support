@@ -182,7 +182,7 @@
               </xs:complexType>
             </xs:element>
           </xs:choice>
-          </xs:complexType>  
+          </xs:complexType>
         </xs:element>
         <xs:element name="stringTable" maxOccurs="1">
           <xs:complexType>
@@ -238,6 +238,8 @@
             <xs:enumeration value="2"/>
             <xs:enumeration value="3"/>
             <xs:enumeration value="4"/>
+            <xs:enumeration value="5"/>
+            <xs:enumeration value="6"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute>
@@ -263,6 +265,17 @@
       <xs:attribute name="isResponsive" type="xs:boolean" use="optional" />
       <xs:attribute name="onlineHelpID" type="xs:string" use="optional" />
       <xs:attribute name="supportsGlobalAndOptionContentTags" type="xs:boolean" use="optional" />
+      <xs:attribute name="outputAsFixedHeight" type="xs:boolean" use="optional" />
+       <xs:attrinute name="supportedSizePolicies" type="xs:string" use="optional">
+         <xs:simpleType>
+           <xs:restriction base="xs:string">
+             <xs:enumeration value="fixed"/>
+             <xs:enumeration value="fluidWidth"/>
+             <xs:enumeration value="fluidWidthHeight"/>
+             <xs:enumeration value="browserWidth"/>
+           </xs:restriction>
+         </xs:simpleType>
+       </xs:attrinute>
     </xs:complexType>
   </xs:element>
 </xs:schema>
