@@ -2,8 +2,8 @@
     "bodyBeginHTML": {
         "attributes": [],
         "context": [
-            "HTMLWidget", 
-            "value", 
+            "HTMLWidget",
+            "value",
             "trueVal",
             "falseVal"
         ]
@@ -11,113 +11,115 @@
     "bodyEndHTML": {
         "attributes": [],
         "context": [
-            "HTMLWidget", 
-            "value", 
+            "HTMLWidget",
+            "value",
             "trueVal",
             "falseVal"
         ]
     },
     "bool": {
         "attributes": [
-            "defaultValue", 
-            "label", 
-            "name", 
+            "defaultValue",
+            "label",
+            "name",
             "toolTip"
         ],
         "context": ["parameters", "section"]
     },
     "builtIn": {
         "attributes": [
-            "name", 
+            "name",
             "supportedLocales"
         ],
-        "context": ["parameters", "section"]    
+        "context": ["parameters", "section"]
     },
     "color": {
         "attributes": [
-            "formatHexColor", 
-            "label", 
-            "defaultValue", 
-            "name", 
-            "rgbColor", 
+            "formatHexColor",
+            "label",
+            "defaultValue",
+            "name",
+            "rgbColor",
             "supportsNoneColor",
             "toolTip",
             "transparentOption"
         ],
-        "context": ["parameters", "section"]    
+        "context": ["parameters", "section"]
     },
     "documentReadyJS": {
         "attributes": [],
         "context": [
-            "HTMLWidget", 
-            "value", 
+            "HTMLWidget",
+            "value",
             "trueVal",
             "falseVal"
         ]
-    },    
+    },
     "falseVal": {
         "attributes": [
-            "disableOptions", 
+            "disableOptions",
             "value"
         ],
         "context": ["bool"]
     },
     "file": {
         "attributes": [
-            "filterLabel", 
-            "fileTypes", 
-            "fileRequiredForOutput", 
-            "label", 
+            "filterLabel",
+            "fileTypes",
+            "fileRequiredForOutput",
+            "label",
             "name",
             "toolTip",
             "asAbsoluteURL"
         ],
-        "context": ["parameters", "section"]    
+        "context": ["parameters", "section"]
     },
     "headHTML": {
         "attributes": [],
         "context": [
-            "HTMLWidget", 
-            "value", 
+            "HTMLWidget",
+            "value",
             "trueVal",
             "falseVal"
         ]
     },
     "HTMLWidget": {
         "attributes": [
-            "creator", 
-            "defaultHeight", 
-            "defaultWidth", 
-            "formatNumber", 
-            "isResizable", 
-            "localization", 
-            "maxWidth", 
-            "maxHeight", 
-            "minHeight", 
-            "minWidth", 
-            "name", 
-            "termsURL", 
+            "creator",
+            "defaultHeight",
+            "defaultWidth",
+            "formatNumber",
+            "isResizable",
+            "localization",
+            "maxWidth",
+            "maxHeight",
+            "minHeight",
+            "minWidth",
+            "name",
+            "termsURL",
             "termsText",
             "supportsGlobalAndOptionContentTags",
-            "isResponsive"
+            "isResponsive",
+            "supportedSizePolicies",
+            "outputAsFixedHeight"
         ],
         "context": ["/root$"]
     },
     "info": {
         "attributes": [
             "label",
-            "linkURL" 
+            "linkURL"
         ],
-        "context": ["parameters", "section"]    
+        "context": ["parameters", "section"]
     },
     "list": {
         "attributes": [
-            "defaultValue", 
-            "label", 
-            "name", 
+            "defaultValue",
+            "label",
+            "name",
             "toolTip"
         ],
-        "context": ["parameters", "section"]    
+        "context": ["parameters", "section"]
     },
     "locale": {
         "attributes": ["name"],
@@ -125,23 +127,23 @@
     },
     "number": {
         "attributes": [
-            "defaultValue", 
-            "digitsPrecision", 
-            "label", 
-            "max", 
-            "min", 
-            "name", 
-            "snap", 
-            "toolTip", 
+            "defaultValue",
+            "digitsPrecision",
+            "label",
+            "max",
+            "min",
+            "name",
+            "snap",
+            "toolTip",
             "step"
         ],
-        "context": ["parameters", "section"]    
+        "context": ["parameters", "section"]
     },
     "pageItemHTML": {
         "attributes": [],
         "context": [
-            "HTMLWidget", 
-            "value", 
+            "HTMLWidget",
+            "value",
             "trueVal",
             "falseVal"
         ]
@@ -166,14 +168,14 @@
     },
     "separator": {
         "attributes": [],
-        "context": ["parameters", "section"]    
+        "context": ["parameters", "section"]
     },
     "string": {
         "attributes": [
-            "keyString", 
+            "keyString",
             "translation"
         ],
-        "context": ["locale"]    
+        "context": ["locale"]
     },
     "stringTable": {
         "attributes": [],
@@ -181,40 +183,40 @@
     },
     "text": {
         "attributes": [
-            "defaultIllegalForOutput", 
-            "defaultValue", 
-            "label", 
-            "toolTip", 
-            "multiline", 
-            "name", 
+            "defaultIllegalForOutput",
+            "defaultValue",
+            "label",
+            "toolTip",
+            "multiline",
+            "name",
             "paramEncoding"
         ],
-        "context": ["parameters", "section"]    
+        "context": ["parameters", "section"]
     },
     "trueVal": {
         "attributes": [
-            "disableOptions", 
+            "disableOptions",
             "value"
         ],
         "context": ["bool"]
     },
     "url": {
         "attributes": [
-            "currentPageOrURL", 
-            "defaultIllegalForOutput", 
-            "defaultValue", 
-            "dummyDomainPrefix", 
-            "label", 
-            "name", 
-            "toolTip", 
+            "currentPageOrURL",
+            "defaultIllegalForOutput",
+            "defaultValue",
+            "dummyDomainPrefix",
+            "label",
+            "name",
+            "toolTip",
             "urlStart"
         ],
-        "context": ["parameters", "section"]    
+        "context": ["parameters", "section"]
     },
     "value": {
         "attributes": [
-            "disableOptions", 
-            "label", 
+            "disableOptions",
+            "label",
             "name"
         ],
         "context": ["list"]
